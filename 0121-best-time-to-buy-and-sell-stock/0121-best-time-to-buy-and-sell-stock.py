@@ -8,5 +8,4 @@ class Solution:
             max_profit = i - min_profit
             if n < max_profit:
                 n = max_profit
-        
         return n 
