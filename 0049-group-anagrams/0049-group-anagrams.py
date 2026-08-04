@@ -3,7 +3,7 @@ class Solution:
         dir = {}
         for i in strs:
             key = "".join(sorted(i))
-            if "".join(sorted(i)) not in dir:
+            if key not in dir:
                 dir[key] = []
             dir[key].append(i)
         return list(dir.values())
