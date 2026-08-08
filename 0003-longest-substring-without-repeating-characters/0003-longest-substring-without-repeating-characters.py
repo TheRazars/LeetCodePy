@@ -1,11 +1,11 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        let = []
-        n_let = 0
-        for i in s:
-            if i in let:
-                let = let[let.index(i) + 1:]
-            let.append(i)
-            n_let = max(n_let, len(let))
-        return n_let
-        
+        last = {}
+        left = 0
+        max_len = 0
+        for right, i in enumerate(s):
+            if i in last and last[i] >= left:
+                left = last[i] + 1
+            last[i] = right
+            max_len = max(max_len, right - left + 1)
+        return max_len
