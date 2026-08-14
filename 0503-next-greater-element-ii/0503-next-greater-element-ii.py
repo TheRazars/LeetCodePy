@@ -8,7 +8,6 @@ class Solution:
             while memory and nums[memory[-1]] < num:
                 prev = memory.pop()
                 ans[prev] = num
-                print("ttest")
             if i < l:
                 memory.append(i)
         return ans
