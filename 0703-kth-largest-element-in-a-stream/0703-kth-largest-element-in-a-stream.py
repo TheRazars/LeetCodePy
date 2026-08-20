@@ -1,5 +1,4 @@
 class KthLargest:
-
     def __init__(self, k: int, nums: List[int]):
         self.k = k
         self.heap = nums
@@ -10,12 +9,5 @@ class KthLargest:
         if len(self.heap) < self.k:
             heapq.heappush(self.heap, val)
         elif self.heap[0] < val:
-            heapq.heappop(self.heap)
-            heapq.heappush(self.heap, val)
+            heapq.heapreplace(self.heap, val)
         return self.heap[0]
-
-
-
-# Your KthLargest object will be instantiated and called as such:
-# obj = KthLargest(k, nums)
-# param_1 = obj.add(val)
