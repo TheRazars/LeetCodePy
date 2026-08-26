@@ -1,8 +1,13 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        dir = {}
-        for i, n in enumerate(numbers):
-            w = target - n
-            if w in dir:
-                return (dir[w]+1, i+1)
-            dir[n] = i
+        left = 0
+        right = len(numbers) - 1
+        for i in numbers:
+            s = numbers[left] + numbers[right]
+            if s == target:
+                return left + 1, right + 1
+            elif s > target:
+                right -= 1
+            else:
+                left += 1
+            print(left, right)
