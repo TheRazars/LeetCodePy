@@ -8,7 +8,6 @@ class Solution:
                 h = heights[stack.pop()]
                 left = stack[-1] if stack else -1
                 w = i - left - 1
-                print(h, w)
                 best = max(best, w*h)
-            stack.append(i)    
+            stack.append(i)
         return best
